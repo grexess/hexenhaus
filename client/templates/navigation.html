@@ -1,0 +1,19 @@
+<template name="navigation">
+
+    <div class="topnav" id="myTopnav">
+      <a class="navEvent active" href="{{pathFor route='home'}}">Home</a>
+      {{#if currentUser}}
+      <li>
+        <a class="navEvent logout" href="#">Logout</a>
+      </li>
+      {{else}}
+      <a class="navEvent" href="{{pathFor route='register'}}">Register</a>
+      <a class="navEvent" href="{{pathFor route='login'}}">Login</a>
+      {{/if}}
+  
+      <a href="javascript:void(0);" class="icon">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  
+  </template>

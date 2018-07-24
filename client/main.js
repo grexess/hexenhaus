@@ -6,6 +6,8 @@ import {
 } from 'meteor/reactive-var';
 
 import './main.html';
+import './templates/header.js';
+import './templates/navigation.js';
 
 Router.configure({
   layoutTemplate: 'main'
@@ -33,29 +35,12 @@ Template.register.events({
   }
 });
 
-Template.navigation.events({
-
-  'click .icon' (event) {
-    event.preventDefault();
-    var x = $('#myTopnav');
-
-    if (x.hasClass("topnav")) {
-      if (x.hasClass("responsive")) {
-        x.removeClass("responsive");
-      } else {
-        x.addClass("responsive");
-      }
-    } else {
-      x.addClass("topnav");
-    }
-  },
-
-  'click .navEvent' (event) {
-
-    var x = $('#myTopnav');
-    if (x.hasClass("responsive")) {
-      x.removeClass("responsive");
-    }
+Template.login.events({
+  'submit form': function(event){
+      event.preventDefault();
+      var email = $('[name=email]').val();
+      var password = $('[name=password]').val();
+      Meteor.loginWithPassword(email, password);
   }
-
 });
+
