@@ -23,11 +23,17 @@ Template.navigation.events({
       if (x.hasClass("responsive")) {
         x.removeClass("responsive");
       }
+
+      $('.navEvent').removeClass("active").addClass('inactive');
+      $(event.currentTarget).addClass("active");
+
     },
   
     'click .logout': function (event) {
       event.preventDefault();
       Meteor.logout();
+      $('.navEvent').removeClass("active").addClass('inactive');
+      $('#login').addClass("active");
+      Router.go('login');
     }
-  
   });

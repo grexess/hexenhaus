@@ -1,30 +1,32 @@
 
 .topnav {
     overflow: hidden;
-    background-color: #E6E6E6;
   }
   
   .topnav a {
     float: left;
     display: block;
-    color: #0080FF;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
   }
-  
-  .topnav a:hover {
-    background-color: #0080FF;
-    color: #fff;
-  }
-  
+
   .active {
-    background-color: #fff;
-    color: #424242;
+    /*background-color: #2196F3;*/
+    color: #2196F3 !important;
     font-weight: bold;
   }
-  
+
+  .inactive {
+    /*background-color: #2196F3;*/
+    color: #424242;
+  }
+
+  .inactive:hover {
+    color:  #2196F3 !important;
+  }
+
   .topnav .icon {
     display: none;
   }
