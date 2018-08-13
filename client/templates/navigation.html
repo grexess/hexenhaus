@@ -1,20 +1,25 @@
 <template name="navigation">
 
-    <div class="topnav w3-border-bottom w3-border-blue" id="myTopnav">
-      <a id="home" class="navEvent active" href="{{pathFor route='home'}}">Home</a>
-      {{#if currentUser}}
-        <a class="navEvent" href="{{pathFor route='corsika2018'}}">Korsika 2018</a>
-        <a class="navEvent" href="#">Sonstiges</a>
-        <a class="navEvent logout" href="#">Logout</a>
-      {{else}}
-      <!-- <a class="navEvent inactive" href="{{pathFor route='register'}}">Register</a> -->
-      <a class="navEvent inactive" href="{{pathFor route='bla'}}">Bla</a>
-      <a id="login" class="navEvent inactive" href="{{pathFor route='login'}}">Login</a>
-      {{/if}}
-  
-      <a href="javascript:void(0);" class="icon">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-  
-  </template>
+  <div class="topnav w3-border-bottom w3-border-blue" id="myTopnav">
+    <a id="home" class="navEvent active" href="{{pathFor route='home'}}">Home</a>
+
+    {{#if isInRole 'active' 'everyone'}}
+    <a class="navEvent" href="{{pathFor route='corsika2018'}}">Korsika 2018</a>
+    {{/if}} 
+    
+    {{#if isInRole 'admin' 'everyone'}}
+    <a class="navEvent inactive" href="{{pathFor route='admin'}}">Admin</a>
+    {{/if}} 
+    
+    {{#if currentUser}}
+    <a class="navEvent logout" href="#">Logout</a>
+    {{else}}
+    <a id="login" class="navEvent inactive" href="{{pathFor route='login'}}">Login</a>
+    {{/if}}
+
+    <a href="javascript:void(0);" class="icon">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+</template>

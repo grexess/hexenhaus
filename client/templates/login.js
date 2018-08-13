@@ -15,6 +15,7 @@ Template.login.events({
     });
   },
 
+  /* Create a new user account*/
   'click #registerBtn': function (event) {
     event.preventDefault();
     var email = $('[name=registeremail]').val();
@@ -30,11 +31,15 @@ Template.login.events({
       } else {
         swal("Account created!", "Please wait for approval mail!", "success");
         $('#home').removeClass('inactive').addClass('active');
+
+        Meteor.call('addInitialRoles', Meteor.user()._id);
+        Meteor.call('sendEmail', email);
         Router.go("home");
       }
     });
   },
 
+  /* Switch between login and registration formular */
   'click .message a': function (event) {
     event.preventDefault();
     $('form').animate({

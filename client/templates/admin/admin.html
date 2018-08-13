@@ -1,0 +1,6 @@
+<template name="admin">
+  {{#if isInRole 'admin' 'everyone'}}
+  <div class="w3-xlarge w3-center">Admin Stuff</div>
+  {{else}}
+  <div class="w3-xlarge w3-center">Forbidden</div> {{/if}}
+</template>

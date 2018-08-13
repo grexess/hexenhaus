@@ -13,6 +13,8 @@ import './templates/login.js';
 import './templates/navigation.js';
 import './templates/corsika2018.js';
 
+import './templates/admin/admin.js';
+
 Router.configure({
   layoutTemplate: 'main'
 });
@@ -23,7 +25,16 @@ Router.route('/', {
 });
 
 Router.route('/bla');
+Router.route('/admin');
 Router.route('/register');
 Router.route('/login');
 Router.route('/about');
 Router.route('/corsika2018');
+
+Template.home.helpers({
+
+  getLoginName() {
+    return Meteor.user().emails[0].address;
+  }
+
+})
