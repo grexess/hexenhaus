@@ -23,16 +23,20 @@
   <H1>Dein Account wurde noch nicht freigeschalten!</H1>
   {{/if}}
 
-  <div class="w3-center w3-margin w3-display-container">
+  <!-- <div class="w3-center w3-margin w3-display-container">
     <img src="./images/pic001.JPG" alt="Lights" class="w3-image w3-round-xlarge w3-sepia w3-hover-opacity" width="600" height="400">
     <div class="w3-xlarge w3-text-white w3-display-bottommiddle w3-large">Hexenhaus früher</div>
-  </div>
+  </div> -->
+
+  {{> startpage}}
 
 </template>
+
+
 
 <template name="main">
   <div class="content">
     {{> header}} {{> navigation}} {{> yield}}
-    <hr /> {{> footer}}
+    {{> footer}}
   </div>
 </template>
