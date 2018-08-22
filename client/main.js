@@ -7,6 +7,7 @@ import {
 
 import './main.html';
 import './templates/header.js';
+import './templates/startpage.js';
 import './templates/footer.js';
 import './templates/bla.js';
 import './templates/login.js';
