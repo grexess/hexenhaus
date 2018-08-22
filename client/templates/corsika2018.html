@@ -1,5 +1,28 @@
 <template name="corsika2018">
 
-    <div class="w3-xlarge w3-center">Korsika 2018</div>
+  <div class="w3-bar w3-white">
+    <a href="#" class="w3-bar-item w3-button w3-mobile navEventCorsika active" data-target="sliderContainer0">Wandern</a>
+    <a href="#" class="w3-bar-item w3-button w3-mobile navEventCorsika inactive" data-target="sliderContainer1">Chillen</a>
+    <a href="#" class="w3-bar-item w3-button w3-mobile navEventCorsika inactive" data-target="sliderContainer2">Radfahren</a>
+  </div>
+
+  <div class="w3-container w3-center sliderCont" id="sliderContainer0">
+    <h2>Wandern</h2>
+  </div>
+
+  <div class="w3-container w3-center sliderCont" id="sliderContainer1">
+    <h2>Chillen</h2>
+  </div>
+
+  <div class="w3-container w3-center sliderCont" id="sliderContainer2">
+    <h2>Radfahren</h2>
+  </div>
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+  <div id="caption"></div>
+</div>
     
   </template>

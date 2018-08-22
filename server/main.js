@@ -24,10 +24,10 @@ Meteor.methods({
   addInitialRoles: function (userID) {
     
     //register administrator account
-    //Roles.addUsersToRoles(userID, ['active', 'admin'],'everyone');
+    Roles.addUsersToRoles(userID, ['active', 'admin'],'everyone');
     
     //add user to role "inactive"
-    Roles.addUsersToRoles(userID, 'inactive', 'everyone');
+    //Roles.addUsersToRoles(userID, 'inactive', 'everyone');
   },
   
   sendEmail: function (email) {

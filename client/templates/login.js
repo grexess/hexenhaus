@@ -22,6 +22,13 @@ Template.login.events({
     var password = $('[name=registerpwd]').val();
     var passwordconfirm = $('[name=confirm-registerpwd]').val();
 
+    if(password !== passwordconfirm){
+      swal('Oops...', "Passwörter stimmen nicht überein", 'error'); 
+      $('[name=registerpwd]').val('');
+      $('[name=confirm-registerpwd]').val('');
+      return;
+    }
+
     Accounts.createUser({
       email: email,
       password: password
